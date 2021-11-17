@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      code {
+        background-color: lightgray;
+        display: block;
+        padding: 10px 15px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- part-1 -->
+    <h2>Global import</h2>
+    <div id="app"></div>
+    <script src="js/globalImport.js"></script>
+    <code>
+      &#x3C;script src=&#x22;js/globalImport.js&#x22;&#x3E;&#x3C;/script&#x3E;
+    </code>
+
+    <!-- part-2 -->
+    <h2>Module import</h2>
+    <span id="fun1"> fun1() : </span>
+    <script type="module">
+      import { fun1 } from "./js/fun1.js";
+      document.querySelector("#fun1").innerText += fun1();
+    </script>
+    <code>
+      &#x3C;script type=&#x22;module&#x22;&#x3E; import { fun1 } from
+      &#x22;./js/fun1.js&#x22;;
+      document.querySelector(&#x22;#fun1&#x22;).innerText += fun1();
+      &#x3C;/script&#x3E;
+    </code>
+
+    <!-- part-3 -->
+    <h2>Module default import</h2>
+    <span id="fun2"> fun2() : </span>
+    <script type="module">
+      import fun2 from "./js/fun2.js";
+      document.querySelector("#fun2").innerText += fun2();
+    </script>
+    <code>
+      &#x3C;script type=&#x22;module&#x22;&#x3E; import fun2 from
+      &#x22;./js/fun2.js&#x22;;
+      document.querySelector(&#x22;#fun2&#x22;).innerText += fun2();
+      &#x3C;/script&#x3E;
+    </code>
+
+    <!-- part-2 -->
+    <h2>Module import</h2>
+    <span id="nest1"> nest1() : </span>
+    <script type="module">
+      import { nest1 } from "./js/nest1.js";
+      document.querySelector("#nest1").innerText += nest1();
+    </script>
+    <code>
+      &#x3C;script type=&#x22;module&#x22;&#x3E; import { nest1 } from
+      &#x22;./js/nest1.js&#x22;;
+      document.querySelector(&#x22;#nest1&#x22;).innerText += nest1();
+      &#x3C;/script&#x3E;
+    </code>
+  </body>
+</html>
